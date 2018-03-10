@@ -17,10 +17,8 @@ def search_for_name (num):
     for i in documents:
         if num == i.get('number'):
             return i.get('name')
-        else:
-          return 'Нет такого номера документа'
-        
-        
+
+
 def show_doc ():
     counter = 0
     while counter >= 0:
