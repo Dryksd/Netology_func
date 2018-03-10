@@ -13,7 +13,7 @@ directories = {
         '3': []
       }
       
-def p (num):
+def search_for_name (num):
     for i in documents:
         if num == i.get('number'):
             return i.get('name')
@@ -21,7 +21,7 @@ def p (num):
           return 'Нет такого номера документа'
         
         
-def l ():
+def show_doc ():
     counter = 0
     while counter >= 0:
         for i in documents:
@@ -32,14 +32,14 @@ def l ():
     return 'Выведен список всех документов'
         
     
-def s (num):
+def shelf (num):
     for i in directories.items():
         for c in i:
             if num in c:
                 return i[0]
             
                 
-def a (**some_dict):
+def add_doc (**some_dict):
     vb =[str(len(v)+1)]
     vb2 = [list(((v.get('number'))).split())]
     cvb = dict(zip(vb,vb2))
@@ -51,19 +51,19 @@ def a (**some_dict):
 
 if entered == 'p':
   p_input = input("Введите номер документа:     ")
-  print(p(p_input))
+  print(search_for_name(p_input))
 
 if entered == 'l':
-  print(l())
+  print(show_doc())
   
 if entered == 's':
   s_input = input("Введите номер документа:     ")
-  print(s(s_input))
+  print(shelf(s_input))
   
 if entered == 'a':
   a_input = list((input("Введите значения для type number name через пробел:     ")).split())
   v = dict(type = a_input[0], number = a_input[1], name = a_input[2])
   
-  print(a(**v))
+  print(add_doc(**v))
   
 input()
